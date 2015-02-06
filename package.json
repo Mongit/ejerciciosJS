@@ -1,0 +1,11 @@
+{
+  "name": "ejerciciosJS",
+  "version": "0.0.0",
+  "description": "",
+  "main": "Cap2BeanCounting.js",
+  "scripts": {
+    "test": "nodejs --harmony $(which nodeunit) C3-test/"
+  },
+  "author": "",
+  "license": "BSD-2-Clause"
+}
