@@ -1,48 +1,25 @@
-var range = function(start, end, step) {
+function range(start, end, step) {
+  if (step == null) step = 1;
   var array = [];
-  var suma = 0;
- 
 
-  if(arguments.length < 3) {
-    for(var i = start; i <= end; i++) {
-      array[i] = i;
-      suma = suma+i;
-    }
-
-    console.log("suma = " + suma);
+  if (step > 0) {
+    for (var i = start; i <= end; i += step)
+      array.push(i);
+  } else {
+    for (var i = start; i >= end; i += step)
+      array.push(i);
   }
-
- 
-  else {
-
-    if(step < 0) {
-      var l = start;
-      while(l >= end) {
-        array[l] = l;
-        console.log(" = l: "+l);
-        l = l + step;       
-     }
-    }
-
-    else { 
-      var k = start;
-      while(k <= end) {
-        array[k] = k;
-        k = k + step;
-      }
-
-    }
-   
-  }
-
-
-  for(var j = start; j <= end; j++) {
-//    if(array[j] !== undefined)
-      console.log(array[j]);
-  }
- 
-
+  return array;
 }
 
-range(5, 2, -1);
+function sum(array) {
+  var total = 0;
+  for (var i = 0; i < array.length; i++)
+    total += array[i];
+  return total;
+}
 
+console.log(sum(range(1, 10)));
+// → 55
+console.log(range(5, 2, -1));
+// → [5, 4, 3, 2]
